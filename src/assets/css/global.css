@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "TT Firs Neue Trial Var Roman";
+  src: url("../fonts/tt-firs-neue-trial-var-roman.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 100 400 500 900;
+}
+
+@font-face {
+  font-family: "fontello";
+  src: url("../fonts/fontello.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  @apply h-full text-base bg-geyser-200;
+  font-family: "TT Firs Neue Trial Var Roman";
+  font-size: 16px;
+}
+
+/*********** COMPONENTS ***********/
+
+/************* Icons ***********/
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: never;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: .2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-chat:before { content: '\e800'; } /* '' */
+.icon-adjunct:before { content: '\e801'; } /* '' */
+.icon-cog:before { content: '\e802'; } /* '' */
+.icon-earphones:before { content: '\e803'; } /* '' */
+.icon-ecommerce:before { content: '\e804'; } /* '' */
+.icon-house:before { content: '\e805'; } /* '' */
+.icon-logout:before { content: '\e806'; } /* '' */
+.icon-inbox:before { content: '\e807'; } /* '' */
+.icon-integration:before { content: '\e808'; } /* '' */
+.icon-invoice:before { content: '\e809'; } /* '' */
+.icon-link:before { content: '\e80a'; } /* '' */
+.icon-magnet:before { content: '\e80b'; } /* '' */
+.icon-message:before { content: '\e80c'; } /* '' */
+.icon-picture:before { content: '\e80d'; } /* '' */
+.icon-robot:before { content: '\e80e'; } /* '' */
+.icon-search:before { content: '\e80f'; } /* '' */
+.icon-add:before { content: '\e810'; } /* '' */
+.icon-user:before { content: '\e811'; } /* '' */
+.icon-users:before { content: '\e812'; } /* '' */
+.icon-arrow:before { content: '\e813'; } /* '' */
+.icon-bell:before { content: '\e814'; } /* '' */
+.icon-browser:before { content: '\e815'; } /* '' */
+.icon-square:before { content: '\e816'; } /* '' */
+.icon-hyperlink:before { content: '\e817'; } /* '' */
+.icon-forgot:before { content: '\e818'; } /* '' */
+.icon-envelope:before { content: '\e819'; } /* '' */
+.icon-happy:before { content: '\e81a'; } /* '' */
+.icon-lock:before { content: '\e81b'; } /* '' */
+.icon-shopify:before { content: '\e81c'; } /* '' */
+.icon-gmail:before { content: '\e81d'; } /* '' */
+.icon-hide:before { content: '\e81e'; } /* '' */
+.icon-card:before { content: '\e81f'; } /* '' */
+.icon-send:before { content: '\e820'; } /* '' */
+.icon-chevron:before { content: '\e821'; } /* '' */
+.icon-signup:before { content: '\e822'; } /* '' */
+.icon-x:before { content: '\e824'; } /* '' */
+.icon-star:before { content: '\e825'; } /* '' */
+.icon-pen:before { content: '\e826'; } /* '' */
+.icon-ball:before { content: '\e827'; } /* '' */
+.icon-clock:before { content: '\e829'; } /* '' */
+.icon-coffe:before { content: '\e82a'; } /* '' */
+
+/************* Buttons ***********/
+
+/* Button Icon */
+.button-icon {
+  @apply flex items-center justify-center text-center transition delay-100 bg-white rounded-full cursor-pointer text-emerald-500 hover:bg-emerald-500 hover:text-white w-14 h-14 shadow-geyser-10 hover:shadow-emerald-40 text-2xl
+}
+.button-icon-small {
+  @apply flex items-center justify-center text-center transition delay-100 bg-white rounded-full cursor-pointer text-emerald-500 hover:bg-emerald-500 hover:text-white w-10 h-10 shadow-geyser-10 hover:shadow-emerald-40 text-xl
+}
+
+.button-icon-outline {
+  @apply flex items-center justify-center text-center transition delay-100 bg-transparent rounded-full cursor-pointer border border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white w-14 h-14 shadow-geyser-10 hover:shadow-emerald-40 text-2xl
+}
+
+/* Button */
+.button-gray-small {
+  @apply flex items-center justify-center w-full gap-2 py-2 text-sm text-black rounded-full cursor-pointer hover:bg-emerald-600 bg-gray-300 hover:shadow-emerald-40 hover:text-white
+}
+
+.button-emerald-small {
+  @apply flex items-center justify-center w-full gap-2 py-2 text-sm text-white rounded-full cursor-pointer hover:bg-emerald-600 bg-emerald-500 hover:shadow-emerald-40
+}
+
+.button-white-small {
+  @apply flex items-center justify-center w-full gap-2 py-2 text-sm text-white rounded-full cursor-pointer hover:bg-emerald-600 bg-emerald-500 hover:shadow-emerald-40
+}
+
+.button-outline-white {
+  @apply px-6 py-3 text-base text-white border border-white rounded-full min-w-[200px] hover:bg-white hover:text-emerald-500 hover:shadow-emerald-40
+}
+.button-emerald {
+  @apply flex items-center justify-center w-full gap-2 px-6 py-3 text-base text-white rounded-full cursor-pointer hover:bg-emerald-600 bg-emerald-500 hover:shadow-emerald-40
+}
+
+.button-elfgreen {
+  @apply flex items-center justify-center w-full gap-2 px-6 py-3 text-base text-white rounded-full cursor-pointer hover:bg-emerald-600 bg-elf-green-700 hover:shadow-emerald-40
+}
+
+.button-elfgreen-light {
+  @apply flex items-center justify-center w-full gap-2 px-6 py-3 text-base text-elf-green-700 rounded-full cursor-pointer hover:bg-emerald-600 bg-elf-green-700 bg-opacity-50 hover:shadow-emerald-40 hover:text-white
+}
+
+/************* Search ***********/
+.search {
+  @apply relative w-2/5 bg-white rounded-full h-14 flex items-center overflow-hidden
+}
+
+.search-icon {
+  @apply w-16 relative flex items-center justify-center text-xl text-emerald-500 after:content-[''] after:absolute after:-top-0 after:right-0 after:w-px after:h-7 after:z-20 after:bg-emerald-200
+}
+
+/************* Account ***********/
+.account {
+  @apply p-2 relative transition delay-100 bg-white rounded-full cursor-pointer hover:bg-emerald-500 shadow-geyser-10 hover:shadow-emerald-40
+}
+
+/************* Chat Box ***********/
+
+/* This class is used in many section */
+.chatbox {
+  @apply flex w-full gap-3 p-3 mb-3 transition bg-white rounded-2xl last:mb-0 hover:shadow-emerald-40
+}
+
+/************* Sidebar ***********/
+.sidebar-item {
+  @apply flex items-center justify-center w-full relative h-28 rounded-e-3xl overflow-hidden cursor-pointer transition before:h-full before:w-full before:-translate-x-full hover:before:translate-x-0 before:content-[''] before:absolute before:transition before:bg-gradient-to-b from-emerald-500 to-[#29C1AF] before:border-emerald-700 before:border-l-4
+}
+
+/* This class is used to visually highlight the sidebar item that the user has currently selected. */
+.sidebar-item-is-active {
+  @apply before:translate-x-0 before:content-[''] before:absolute before:transition before:bg-gradient-to-b from-emerald-500 to-[#29C1AF] before:border-emerald-700 before:border-l-4 !text-white
+}
+
+/************* Statistics ***********/
+.statistics {
+  @apply bg-white bg-opacity-50 rounded-3xl h-[110px] w-4/5 cursor-pointer transition relative overflow-hidden before:h-full before:w-full before:-translate-x-full hover:before:translate-x-0 before:content-[''] before:absolute before:z-10 before:transition before:bg-emerald-500 before:duration-500
+}
+
+/************* Goals ***********/
+.goals {
+  @apply w-1/3 bg-white bg-opacity-50 rounded-3xl relative overflow-hidden before:h-full before:w-full before:content-[''] before:absolute before:z-10 before:transition before:bg-emerald-500 before:duration-500 before:-translate-x-full hover:before:translate-x-0
+}
+
+/************* Integrations ***********/
+.integrations {
+  @apply bg-white flex items-center justify-center bg-opacity-50 rounded-3xl h-[110px] w-1/5 transition relative overflow-hidden before:h-full before:w-full before:content-[''] before:absolute before:z-10 before:transition before:bg-emerald-500 before:duration-500 before:-translate-x-full hover:before:translate-x-0
+}
+
+/************* OR ***********/
+.or-line {
+  @apply block my-10 h-5 relative text-sm text-gray-400 after:content-[''] after:bg-emerald-500 after:absolute after:right-0 after:w-full after:h-px after:top-1/2 before:content-[''] before:absolute before:left-2/4 before:-translate-x-1/2 before:w-8 before:h-8 before:z-10 before:rounded-full before:bg-geyser-100
+}
+
+/************* CHATBOT ***********/
+.chatbot-handler {
+  @apply fixed bottom-20 right-4 flex items-center justify-center w-20 h-20 text-center text-white transition delay-100 rounded-full cursor-pointer bg-emerald-500 hover:bg-white hover:text-emerald-500 shadow-emerald-40 hover:shadow-emerald-50
+}
+
+.chatbot-send {
+  @apply flex items-center justify-center w-16 h-16 text-center text-white transition delay-100 rounded-full cursor-pointer bg-emerald-500 hover:bg-white hover:text-emerald-500 shadow-emerald-40 hover:shadow-emerald-50 absolute -right-9 -top-12
+}
+
+
+/*********** UTILITIES ***********/
+
+.line-normal {
+  line-height: normal;
+}
+
+/************* ScrollBar ***********/
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
