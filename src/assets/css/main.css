@@ -766,10 +766,6 @@ video {
   height: 310px;
 }
 
-.h-\[400px\] {
-  height: 400px;
-}
-
 .h-\[420px\] {
   height: 420px;
 }
@@ -957,6 +953,11 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.translate-x-\[530px\] {
+  --tw-translate-x: 530px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .translate-y-\[430px\] {
   --tw-translate-y: 430px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1049,10 +1050,6 @@ video {
 
 .gap-5 {
   gap: 1.25rem;
-}
-
-.gap-11 {
-  gap: 2.75rem;
 }
 
 .overflow-hidden {
@@ -2685,11 +2682,6 @@ body {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.hover\:text-yellow-200:hover {
-  --tw-text-opacity: 1;
-  color: rgb(254 240 138 / var(--tw-text-opacity));
 }
 
 .hover\:text-yellow-300:hover {
