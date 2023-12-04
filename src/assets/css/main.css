@@ -634,6 +634,11 @@ video {
   z-index: 30;
 }
 
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
@@ -738,6 +743,10 @@ video {
   height: 1.5rem;
 }
 
+.h-60 {
+  height: 15rem;
+}
+
 .h-7 {
   height: 1.75rem;
 }
@@ -780,6 +789,10 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-56 {
+  height: 14rem;
 }
 
 .max-h-\[340px\] {
@@ -882,6 +895,10 @@ video {
   width: 1.5rem;
 }
 
+.w-60 {
+  width: 15rem;
+}
+
 .w-64 {
   width: 16rem;
 }
@@ -896,6 +913,10 @@ video {
 
 .w-80 {
   width: 20rem;
+}
+
+.w-\[130px\] {
+  width: 130px;
 }
 
 .w-\[1600px\] {
@@ -926,6 +947,22 @@ video {
   width: 100%;
 }
 
+.w-56 {
+  width: 14rem;
+}
+
+.w-2\/6 {
+  width: 33.333333%;
+}
+
+.w-\[250px\] {
+  width: 250px;
+}
+
+.w-\[500px\] {
+  width: 500px;
+}
+
 .min-w-\[330px\] {
   min-width: 330px;
 }
@@ -941,6 +978,10 @@ video {
 .max-w-fit {
   max-width: -moz-fit-content;
   max-width: fit-content;
+}
+
+.max-w-screen-2xl {
+  max-width: 1536px;
 }
 
 .translate-x-0 {
@@ -992,6 +1033,10 @@ video {
   cursor: pointer;
 }
 
+.list-none {
+  list-style-type: none;
+}
+
 .grid-cols-7 {
   grid-template-columns: repeat(7, minmax(0, 1fr));
 }
@@ -1038,6 +1083,10 @@ video {
 
 .gap-20 {
   gap: 5rem;
+}
+
+.gap-28 {
+  gap: 7rem;
 }
 
 .gap-3 {
@@ -1869,6 +1918,24 @@ body {
 }
 
 /* '' */
+
+.icon-hands:before {
+  content: '\e82c';
+}
+
+/* '' */
+
+.icon-briefcase:before {
+  content: '\e82d';
+}
+
+/* '' */
+
+.icon-sully:before {
+  content: '\e82e';
+}
+
+/* '' */
 
 /************* Buttons ***********/
 

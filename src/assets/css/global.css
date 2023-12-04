@@ -88,6 +88,9 @@ body {
 .icon-clock:before { content: '\e829'; } /* '' */
 .icon-coffe:before { content: '\e82a'; } /* '' */
 .icon-start-fill:before { content: '\e82b'; } /* '' */
+.icon-hands:before { content: '\e82c'; } /* '' */
+.icon-briefcase:before { content: '\e82d'; } /* '' */
+.icon-sully:before { content: '\e82e'; } /* '' */
 
 /************* Buttons ***********/
 
