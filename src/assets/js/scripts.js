@@ -54,14 +54,6 @@ const handleMouseOver = (sidebarLabel) =>
 const handleMouseOut = (sidebarLabel) =>
   toggleClasses(sidebarLabel, "opacity-1", "opacity-0");
 
-// Notifications
-const notificationHandler = document.getElementById("notification-handler");
-const notificationCenter = document.getElementById("notification-center");
-handlerToggleDisplay(notificationHandler, notificationCenter);
-
-// document.addEventListener("click", (event) =>
-//   handleClickAway(event, notificationHandler, notificationCenter)
-// );
 
 // Sidebar
 const sidebarHandlers = document.getElementsByClassName("sidebar-handler");
@@ -77,89 +69,170 @@ const sidebarLabels = document.getElementsByClassName("sidebar-label");
 });
 
 // Account
-const accountHandler = document.getElementById("account-handler");
-const accountDropdown = document.getElementById("account-dropdown");
+const account = document.querySelector(".account");
+const accountHandler = document.querySelector(".account-handler");
+const accountDropdown = document.querySelector(".account-dropdown");
 
-handlerToggleDisplay(accountHandler, accountDropdown);
+handlerToggleClass(
+  accountHandler,
+  "account",
+  "account-is-active",
+  account
+);
 
-// document.addEventListener("click", (event) =>
-//   handleClickAway(event, accountHandler, accountDropdown)
-// );
+handlerToggleClass(
+  accountHandler,
+  "account-dropdown",
+  "account-dropdown-is-active",
+  accountDropdown
+);
+
 
 // Status Dropdown
-const statusHandler = document.getElementById("status-handler");
-const statusDropdown = document.getElementById("status-dropdown");
+const statusHandler = document.querySelector(".status");
+const statusDropdown = document.querySelector(".status-dropdown");
 
-handlerToggleDisplay(statusHandler, statusDropdown);
-// document.addEventListener("click", (event) =>
-//   handleClickAway(event, statusHandler, statusDropdown)
-// );
+handlerToggleClass(
+  statusHandler,
+  "status-dropdown",
+  "status-dropdown-is-active",
+  statusDropdown
+);
 
-// Language Dropdown
-const languageHandler = document.getElementById("language-handler");
-const languageDropdown = document.getElementById("language-dropdown");
+// Site Language Dropdown
+const languageHandler = document.querySelector(".language-handler");
+const languageDropdown = document.querySelector(".language-dropdown");
 
-handlerToggleDisplay(languageHandler, languageDropdown);
-// document.addEventListener("click", (event) =>
-//   handleClickAway(event, languageHandler, languageDropdown)
-// );
+handlerToggleClass(
+  languageHandler,
+  "language-dropdown",
+  "language-dropdown-is-active",
+  languageDropdown
+);
+
+// Chat Config Language Dropdown
+const chatLanguageHandler = document.querySelector(".chat-language-handler");
+const chatLanguageDropdown = document.querySelector(".chat-language-dropdown");
+
+handlerToggleClass(
+  chatLanguageHandler,
+  "chat-language-dropdown",
+  "chat-language-dropdown-is-active",
+  chatLanguageDropdown
+);
+
 
 // Chatbot
-const chatbotHandler = document.getElementById("chatbot-handler");
-const chatbotIcon = document.getElementById("chatbot-icon");
-const chatbotBox = document.getElementById("chatbot-box");
-const chatbotBoxClose = document.getElementById("chatbot-box-close");
-const chatbotEmojisBox = document.getElementById("chatbot-emojis-box");
-const chatbotEmojisHandler = document.getElementById("chatbot-emojis-handler");
-const chatbotNotificationHandler = document.getElementById("chatbot-notification-handler");
-const chatbotNotificationBox = document.getElementById("chatbot-notification-box");
-const chatbotRatingHandler = document.getElementById("chatbot-rating-handler");
-const chatbotRatingBox = document.getElementById("chatbot-rating-box");
+const chatbotHandler = document.querySelector(".chatbot-handler");
+const chatbotIcon = document.querySelector(".chatbot-icon");
+const chatbotBox = document.querySelector(".chatbot-box");
+const chatbotBoxClose = document.querySelector(".chatbot-box-close");
+const chatbotEmojisBox = document.querySelector(".chatbot-emojis-box");
+const chatbotEmojisHandler = document.querySelector(".chatbot-emojis-handler");
 
-chatbotHandler.addEventListener("mouseover", () =>
-  toggleClasses(chatbotIcon, "icon-pen", "icon-message")
+const chatbotNotificationHandler = document.querySelector(
+  ".chatbot-notification-handler"
 );
+const chatbotNotificationBox = document.querySelector(
+  ".chatbot-notification-box"
+);
+const chatbotRatingHandler = document.querySelector(".chatbot-rating-handler");
+const chatbotRatingBox = document.querySelector(".chatbot-rating-box");
 
-chatbotHandler.addEventListener("mouseout", () =>
-  toggleClasses(chatbotIcon, "icon-message", "icon-pen")
-);
+if (chatbotHandler) {
+  // Hover Handler
+  chatbotHandler.addEventListener("mouseover", () =>
+    toggleClasses(chatbotIcon, "icon-pen", "icon-message")
+  );
+
+  // Hover Handler
+  chatbotHandler.addEventListener("mouseout", () =>
+    toggleClasses(chatbotIcon, "icon-message", "icon-pen")
+  );
+}
 
 // Muestra el Chat
-handlerToggleClass(
-  chatbotHandler,
-  "translate-x-[530px]",
-  "translate-x-0",
-  chatbotBox
-);
+handlerToggleClass(chatbotHandler, "chatbot-box", "chatbot-box-is-active", chatbotBox);
 
 // Oculta el Chat
-handlerToggleClass(
-  chatbotBoxClose,
-  "translate-x-0",
-  "translate-x-[530px]",
-  chatbotBox
-);
+handlerToggleClass(chatbotBoxClose, "chatbot-box-is-active", "chatbot-box", chatbotBox);
 
 // Muestra y oculta el box de emojis
 handlerToggleClass(
   chatbotEmojisHandler,
-  "translate-y-[430px]",
-  "translate-y-0",
+  "chatbot-emojis-box",
+  "chatbot-emojis-box-is-active",
   chatbotEmojisBox
 );
 
 // Muestra y oculta el box de notifications
 handlerToggleClass(
   chatbotNotificationHandler,
-  "opacity-0",
-  "opacity-100",
+  "chatbot-notification-box",
+  "chatbot-notification-box-is-active",
   chatbotNotificationBox
 );
 
 // Muestra y oculta el box de rating
 handlerToggleClass(
   chatbotRatingHandler,
-  "opacity-0",
-  "opacity-100",
+  "chatbot-rating-box",
+  "chatbot-rating-box-is-active",
   chatbotRatingBox
 );
+
+// Efecto para el label del input del chat
+const chatbotInput = document.querySelector(".chatbot-input");
+const chatbotInputLabel = document.querySelector(".chatbot-input-label");
+
+if (chatbotInput) {
+  chatbotInput.addEventListener("focusin", () => {
+    chatbotInputLabel.classList.toggle("chatbot-input-label-is-active");
+  });
+  chatbotInput.addEventListener("focusout", () => {
+    chatbotInputLabel.classList.toggle("chatbot-input-label-is-active");
+  });
+}
+
+// FORMULARIOS
+
+// Inputs Focus
+const inputHandlers = document.getElementsByClassName("input");
+const inputWrappers = document.getElementsByClassName("input-container");
+
+[...inputHandlers].forEach((inputHandler, i) => {
+  inputHandler.addEventListener("focusin", () => {
+    [...inputWrappers].forEach((wrapper) => {
+      wrapper.classList.remove("input-container-is-active");
+    });
+    inputWrappers[i].classList.add("input-container-is-active");
+  });
+
+  inputHandler.addEventListener("focusout", () => {
+    inputWrappers[i].classList.remove("input-container-is-active");
+  });
+});
+
+// Search
+const searchHandler = document.querySelector(".search-input");
+const searchWrapper = document.querySelector(".search");
+
+if (searchHandler) {
+  searchHandler.addEventListener("focusin", () => {
+    searchWrapper.classList.toggle("search-is-active");
+  });
+  searchHandler.addEventListener("focusout", () => {
+    searchWrapper.classList.toggle("search-is-active");
+  });
+}
+
+// Notifications
+const notificationHandler = document.querySelector(".notification-handler");
+const notificationCenter = document.querySelector(".notification-center");
+
+if (notificationHandler) {
+  notificationHandler.addEventListener("click", () => {
+    notificationCenter.classList.toggle("notification-center-is-active");
+    notificationHandler.classList.toggle("button-icon-is-active");
+  });
+}
