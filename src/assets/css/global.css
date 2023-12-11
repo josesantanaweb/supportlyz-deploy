@@ -176,7 +176,7 @@ body {
 }
 
 /************* Status ***********/
-.status {
+.status-handler {
   @apply flex items-center justify-between h-10 px-4 mb-3 border-2 rounded-full border-secondary-500 text-secondary-900
 }
 .status-dropdown {
@@ -184,6 +184,17 @@ body {
 }
 .status-dropdown-is-active {
   @apply absolute w-full bg-white rounded-3xl top-[120%] p-3 shadow-gray-20 -translate-y-0 opacity-100 visible transition
+}
+
+/************* Website ***********/
+.website-handler {
+  @apply flex items-center gap-1 mb-1 font-medium text-penitentiary-900 hover:text-tertiary-900
+}
+.website-dropdown {
+  @apply absolute bg-white shadow-gray-20 top-[100%] -left-10 w-[230px] rounded-lg z-20 px-5 py-5 opacity-0 invisible transition -translate-y-[50px]
+}
+.website-dropdown-is-active {
+  @apply absolute bg-white shadow-gray-20 top-[100%] -left-10 w-[230px] rounded-lg z-20 px-5 py-5 opacity-100 visible transition translate-y-0
 }
 
 /************* Notifications ***********/
@@ -204,11 +215,11 @@ body {
 
 /* Esta clase se usa para mostrar el chat */
 .chatbot-box {
-  @apply w-[450px] transition opacity-0 translate-x-full
+  @apply w-[490px] transition opacity-0 translate-x-full
 }
 
 .chatbot-box-is-active {
-  @apply w-[450px] transition opacity-100 translate-x-0
+  @apply w-[490px] transition opacity-100 translate-x-0
 }
 
 /* Esta clase se usa para mostrar el box de emojis */
@@ -259,6 +270,13 @@ body {
 /* This class is used to visually highlight the sidebar item that the user has currently selected. */
 .sidebar-item-is-active {
   @apply before:translate-x-0 before:content-[''] before:absolute before:transition before:bg-gradient-to-b from-secondary-900 to-tertiary-700 before:border-tertiary-900 before:border-l-4 !text-white
+}
+
+.sidebar-label {
+  @apply absolute z-20 flex items-center justify-center h-5 p-3 text-xs text-white capitalize rounded-full opacity-0  invisible -top-2 left-10 bg-tertiary-900 whitespace-nowrap transition delay-1000
+}
+.sidebar-label-is-active {
+  @apply absolute z-20 flex items-center justify-center h-5 p-3 text-xs text-white capitalize rounded-full opacity-100 visible -top-2 left-10 bg-tertiary-900 whitespace-nowrap transition delay-1000
 }
 
 /************* Statistics ***********/
