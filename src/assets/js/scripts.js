@@ -27,6 +27,9 @@
       );
     };
 
+    // Current URL
+    const currentUrl = window.location.href;
+
     /**
      *************** ACCOUNT DROPDOWN ****************
      */
@@ -297,6 +300,38 @@
       );
     });
 
+    const sidebarItems = document.querySelectorAll(".sidebar-item");
+
+    // Itera sobre cada enlace
+    sidebarItems.forEach(function (link) {
+      if (link.href === currentUrl)
+        link.classList.add("sidebar-item-is-active");
+    });
+
+    /**
+     *************** NAVIGATION ****************
+     */
+    const navigationHandlers = document.querySelectorAll(".navigation-handler");
+    const navigationDropdowns = document.querySelectorAll(".navigation-drowdown");
+
+    [...navigationHandlers].forEach((navigationHandler, i) => {
+      toggleClassWithEvent(
+        "click",
+        navigationHandler,
+        "navigation-drowdown-is-active",
+        "navigation-drowdown",
+        navigationDropdowns[i]
+      );
+      toggleClassWithEvent(
+        "click",
+        navigationHandler,
+        "navigation-handler-is-active",
+        "navigation-handler",
+        navigationHandler
+      );
+    });
+
+
     /**
      *************** FORMULARIOS ****************
      */
@@ -348,9 +383,123 @@
       switchText
     );
 
-    // Agrega un controlador de eventos de clic al elemento
-    switchHandler.addEventListener("click", function () {
-      switchText.textContent = switchText.textContent.trim() === "OFF" ? "ON" : "OFF";
+    // Change switch label
+    const changeSwitchLabel = () => {
+      if (!switchHandler) return;
+      switchHandler.addEventListener("click", function () {
+        switchText.textContent =
+          switchText.textContent.trim() === "OFF" ? "ON" : "OFF";
+      });
+    };
+
+    changeSwitchLabel();
+
+    const selectHandlers = document.getElementsByClassName("select-handler");
+    const selectDropdowns = document.getElementsByClassName("select-dropdown");
+
+    [...selectHandlers].forEach((selectHandler, i) => {
+      toggleClassWithEvent(
+        "click",
+        selectHandler,
+        "select-dropdown-is-active",
+        "select-dropdown",
+        selectDropdowns[i]
+      );
+    });
+
+    /**
+     *************** STEPS ****************
+     */
+    const linkSteps = document.querySelectorAll(".step-menu-item");
+
+    // Itera sobre cada enlace
+    linkSteps.forEach(function (link) {
+      if (link.href === currentUrl)
+        link.classList.add("step-menu-item-is-active");
+    });
+
+    // Tabs
+    const tabHandlers = document.getElementsByClassName("step-tab");
+    const tabContents = document.getElementsByClassName("step-tab-content");
+    const questions = document.querySelector(".step-questions");
+
+    toggleClassWithEvent(
+      "click",
+      tabHandlers[1],
+      "step-questions-is-disabled",
+      "step-questions",
+      questions
+    );
+    toggleClassWithEvent(
+      "click",
+      tabHandlers[0],
+      "step-questions",
+      "step-questions-is-disabled",
+      questions
+    );
+
+    [...tabHandlers].forEach((tab, i) => {
+      if (!tabHandlers) return;
+
+      tabHandlers[i].addEventListener("click", function () {
+        // Eliminar clase is-active de todos los tabs
+        [...tabHandlers].forEach((tab) => {
+          tab.classList.remove("step-tab-is-active");
+        });
+
+        // Agregar clase is-active al tab clickeado
+        tabHandlers[i].classList.add("step-tab-is-active");
+
+        // Ocultar todos los contenidos
+        for (let j = 0; j < tabContents.length; j++) {
+          tabContents[j].style.display = "none";
+        }
+
+        // Mostrar el contenido correspondiente al tab clickeado
+        tabContents[i].style.display = "block";
+      });
+    });
+
+    const messageInput = document.querySelector(".step-message-input");
+    const messageText = document.querySelector(".step-message-text");
+
+    const changeMessage = () => {
+      if (!messageInput) return;
+      messageInput.addEventListener("input", function () {
+        // Cambia el texto del elemento messageElement al valor del textarea
+        messageText.textContent = this.value;
+      });
+    };
+
+    changeMessage();
+
+    // Integration Tabs
+    const integrationTabHandlers =
+      document.getElementsByClassName("integration-tab");
+    const integrationContents = document.getElementsByClassName(
+      "integration-content"
+    );
+
+    [...integrationTabHandlers].forEach((tab, i) => {
+      if (!integrationTabHandlers) return;
+
+      integrationTabHandlers[i].addEventListener("click", function () {
+        // Eliminar clase is-active de todos los tabs
+        [...integrationTabHandlers].forEach((tab) => {
+          tab.classList.remove("integration-tab-is-active");
+        });
+
+        // Agregar clase is-active al tab clickeado
+        integrationTabHandlers[i].classList.add("integration-tab-is-active");
+
+        // Ocultar todos los contenidos
+        for (let j = 0; j < integrationContents.length; j++) {
+          integrationContents[j].style.display = "none";
+        }
+
+        // Mostrar el contenido correspondiente al tab clickeado
+        integrationContents[i].style.display = "flex";
+      });
     });
   }
 
